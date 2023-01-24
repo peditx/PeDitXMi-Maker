@@ -20,3 +20,6 @@ sed -i 's/ssid=OpenWrt/ssid=MIWIFI_PeDitXrt/g' package/kernel/mac80211/files/lib
 sed -i 's/encryption=none/encryption=sae-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # set password
 sed -i '/set wireless.default_radio${devidx}.encryption=sae-mixed/a\set wireless.default_radio${devidx}.key=123456789' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+# set wifi on
+sed -i '/set wireless.radio${devidx}.disabled=0/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
